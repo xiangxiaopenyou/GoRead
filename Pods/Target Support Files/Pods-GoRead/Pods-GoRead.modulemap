@@ -1,0 +1,6 @@
+framework module Pods_GoRead {
+  umbrella header "Pods-GoRead-umbrella.h"
+
+  export *
+  module * { export * }
+}
