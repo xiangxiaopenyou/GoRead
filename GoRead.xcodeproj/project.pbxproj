@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C66ABC425809F130096D6F3 /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66ABC325809F130096D6F3 /* PeopleListViewModel.swift */; };
+		6C66ABC925809F280096D6F3 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66ABC825809F280096D6F3 /* PeopleModel.swift */; };
 		6CFC22DE2577691600398FD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFC22DD2577691600398FD0 /* AppDelegate.swift */; };
 		6CFC22E22577691600398FD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFC22E12577691600398FD0 /* ViewController.swift */; };
 		6CFC22E72577691800398FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CFC22E62577691800398FD0 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		078E763B112B2D60EB57ADC7 /* Pods_GoRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437318962E66D7A0A14758F9 /* Pods-GoRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoRead.debug.xcconfig"; path = "Target Support Files/Pods-GoRead/Pods-GoRead.debug.xcconfig"; sourceTree = "<group>"; };
 		6AA5067F4EA58B653357365D /* Pods-GoRead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoRead.release.xcconfig"; path = "Target Support Files/Pods-GoRead/Pods-GoRead.release.xcconfig"; sourceTree = "<group>"; };
+		6C66ABC325809F130096D6F3 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
+		6C66ABC825809F280096D6F3 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		6CFC22DA2577691600398FD0 /* GoRead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoRead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFC22DD2577691600398FD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CFC22E12577691600398FD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C66ABBC25809B8F0096D6F3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6CFC22E12577691600398FD0 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6C66ABBD25809B9A0096D6F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6C66ABC325809F130096D6F3 /* PeopleListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6C66ABBE25809BA00096D6F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C66ABC825809F280096D6F3 /* PeopleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6C66ABBF25809BA50096D6F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6CFC22D12577691600398FD0 = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +137,11 @@
 		6CFC22DC2577691600398FD0 /* GoRead */ = {
 			isa = PBXGroup;
 			children = (
+				6C66ABBE25809BA00096D6F3 /* Model */,
+				6C66ABBD25809B9A0096D6F3 /* ViewModel */,
+				6C66ABBF25809BA50096D6F3 /* View */,
+				6C66ABBC25809B8F0096D6F3 /* ViewController */,
 				6CFC22DD2577691600398FD0 /* AppDelegate.swift */,
-				6CFC22E12577691600398FD0 /* ViewController.swift */,
 				6CFC22E62577691800398FD0 /* Assets.xcassets */,
 				6CFC22E82577691800398FD0 /* LaunchScreen.storyboard */,
 				6CFC22EB2577691800398FD0 /* Info.plist */,
@@ -320,6 +358,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CFC22E22577691600398FD0 /* ViewController.swift in Sources */,
+				6C66ABC425809F130096D6F3 /* PeopleListViewModel.swift in Sources */,
+				6C66ABC925809F280096D6F3 /* PeopleModel.swift in Sources */,
 				6CFC22DE2577691600398FD0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
