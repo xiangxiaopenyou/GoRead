@@ -6,8 +6,29 @@ target 'GoRead' do
 
   use_frameworks!
   
+  # Rx
   pod 'RxSwift'
-  
   pod 'RxCocoa'
+  
+  # Router
+  pod 'URLNavigator'
+  
+  # Network
+  pod 'Moya'
+  
+  # Auto layout
+  pod 'SnapKit'
+  
+  # Keyboard
+  pod 'IQKeyboardManagerSwift'
+  
+  # Toast
+  pod 'Toast-Swift'
+  
+  # Image
+  pod 'Kingfisher'
+  
+  # ObjectMapper
+  pod 'ObjectMapper'
 
 end
