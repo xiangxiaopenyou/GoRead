@@ -39,6 +39,8 @@ class ViewController: UIViewController {
             cell.detailTextLabel?.text = String(people.age)
         }.disposed(by: disposeBag)
         
+        networkReachable()
+        
     }
 
 }
