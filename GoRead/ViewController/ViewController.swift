@@ -34,12 +34,11 @@ class ViewController: UIViewController {
         title = "GoRead"
         
         view.addSubview(tableView)
+        
         peopleListViewModel.peopleList.bind(to: tableView.rx.items(cellIdentifier: peopleCellIdentiferKey)) {_, people, cell in
             cell.textLabel?.text = people.name
             cell.detailTextLabel?.text = String(people.age)
         }.disposed(by: disposeBag)
-        
-        networkReachable()
         
     }
 

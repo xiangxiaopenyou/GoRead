@@ -7,14 +7,13 @@ target 'GoRead' do
   use_frameworks!
   
   # Rx
-  pod 'RxSwift'
   pod 'RxCocoa'
   
   # Router
   pod 'URLNavigator'
   
   # Network
-  pod 'Moya'
+  pod 'Moya/RxSwift'
   
   # Auto layout
   pod 'SnapKit'
