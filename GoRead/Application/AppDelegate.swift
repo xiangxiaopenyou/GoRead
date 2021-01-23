@@ -7,7 +7,7 @@
 
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static var shared: AppDelegate? {
@@ -18,12 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let navigator = Navigator.default
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow.init(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds);
         window?.makeKeyAndVisible()
         let tabBarViewModel = HomeTabBarViewModel()
         navigator.show(sender: nil, scene: .tab(viewModel: tabBarViewModel), transition: .root(window: window!))
         return true
     }
-
 }
 

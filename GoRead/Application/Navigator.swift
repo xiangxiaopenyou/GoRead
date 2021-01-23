@@ -8,9 +8,13 @@
 import Foundation
 import UIKit
 
+protocol Navigatable {
+    var navigator: Navigator! { get set }
+}
+
 class Navigator {
-    static var `default` = Navigator()
     
+    static var `default` = Navigator()
     
     /// 所以视图场景
     enum Scene {

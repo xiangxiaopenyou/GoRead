@@ -1,18 +1,18 @@
 //
-//  NetworkingAPI.swift
+//  UserAPI.swift
 //  GoRead
 //
 //  Created by zhangdu_imac on 2020/12/14.
-//  枚举实现Moya的TargetType协议
+//  用户相关网络接口服务枚举（实现Moya的TargetType协议）
 
 import Foundation
 import Moya
 
-enum NetworkingAPI {
+enum UserAPI {
     case login(path: String, account: String, password: String)
 }
 
-extension NetworkingAPI: TargetType {
+extension UserAPI: TargetType {
     
     var baseURL: URL {
         URL(string: Macros.NetworkURL.baseURL)!
