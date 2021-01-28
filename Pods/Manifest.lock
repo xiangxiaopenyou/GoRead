@@ -2,13 +2,22 @@ PODS:
   - Alamofire (4.9.1)
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (4.10.1)
-  - Moya/Core (13.0.1):
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya-ObjectMapper/Core (2.8):
+    - Moya (~> 12.0)
+    - ObjectMapper (~> 3.4)
+  - Moya-ObjectMapper/RxSwift (2.8):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
+    - RxSwift (~> 4)
+  - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Moya/RxSwift (13.0.1):
+    - Result (~> 4.0)
+  - Moya/RxSwift (12.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - ObjectMapper (4.2.0)
+  - ObjectMapper (3.5.3)
   - Result (4.1.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -20,8 +29,8 @@ PODS:
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
+  - Moya-ObjectMapper/RxSwift
   - Moya/RxSwift
-  - ObjectMapper
   - RxCocoa
   - SnapKit
   - Toast-Swift
@@ -33,6 +42,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - Moya
+    - Moya-ObjectMapper
     - ObjectMapper
     - Result
     - RxCocoa
@@ -45,8 +55,9 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
@@ -54,6 +65,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
 
-PODFILE CHECKSUM: 3b25ddf262839e4f08a562273e1a3ec952eca6ef
+PODFILE CHECKSUM: 3ef6a376d174392f6e210b5b669b8742ac0789e1
 
 COCOAPODS: 1.9.1

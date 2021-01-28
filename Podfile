@@ -6,14 +6,13 @@ target 'GoRead' do
 
   use_frameworks!
   
-  # Rx
-  pod 'RxCocoa'
-  
   # Router
   pod 'URLNavigator'
   
-  # Network
+  # Rx
   pod 'Moya/RxSwift'
+  pod 'Moya-ObjectMapper/RxSwift'
+  pod 'RxCocoa'
   
   # Auto layout
   pod 'SnapKit'
@@ -26,9 +25,6 @@ target 'GoRead' do
   
   # Image
   pod 'Kingfisher'
-  
-  # ObjectMapper
-  pod 'ObjectMapper'
   
   # 消除版本警告
   post_install do |installer|

@@ -2,56 +2,48 @@
 //  Networking.swift
 //  GoRead
 //
-//  Created by zhangdu_imac on 2021/1/23.
+//  Created by zhangdu_imac on 2021/1/28.
 //
 
 import Foundation
 import Moya
-import Alamofire
+import Moya_ObjectMapper
+import ObjectMapper
+import RxCocoa
 import RxSwift
+import Alamofire
 
-class NetworkingProvider<Target> where Target: Moya.TargetType {
+class Networking: APIProtocol {
+    
     /// 网络状态
     fileprivate let isNetworkReachable: Observable<Bool>
-    fileprivate let provider: MoyaProvider<Target>
+    /// UserAPI
+    private let provider: MoyaProvider<NetworkAPI>
     
-    /// 初始化
-    init(provider: MoyaProvider<Target> = MoyaProvider<Target>(), isNetworkReachable: Observable<Bool> = networkReachable()) {
-        self.isNetworkReachable = isNetworkReachable
-        self.provider = provider
-    }
-    /// 请求方法
-    func request(target: Target) -> Observable<Moya.Response> {
-        let resultRequest = provider.rx.request(target)
+    init() {
+        self.isNetworkReachable = networkReachable()
+        self.provider = MoyaProvider<NetworkAPI>()
     }
 }
 
-/// 网络服务协议
-protocol NetworkingProtocol {
-    associatedtype Target: TargetType
-    var provider: NetworkingProvider<Target> { get }
 
-    /// 普通网络请求
-    static func commonNetworking() -> Self
-    /// 特殊网络请求
-    static func othersNetworking() -> Self
+extension Networking {
+    // MARK: APIProtocol
+    func test(classId: String) -> Single<[Category]> {
+        let result = requestArray(target: .test(classId: classId), type: Category.self)
+        return result
+    }
+}
+
+extension Networking {
+    
+    // MARK: Private methods
+    private func requestObject<T: BaseMappable>(target: NetworkAPI, type: T.Type) -> Single<T> {
+        return self.provider.rx.request(target).mapObject(T.self)
+    }
+    private func requestArray<T: BaseMappable>(target: NetworkAPI, type: T.Type) -> Single<[T]> {
+        return self.provider.rx.request(target).mapArray(T.self)
+    }
 }
 
 
-/// 用户相关网络服务结构体
-//struct UserAPINetworking {
-//    let provider: UserAPI
-//
-//    typealias Target = UserAPI
-//
-//    let provider: NetworkingProvider<Target>
-//
-//    static func commonNetworking() -> UserAPINetworking {
-//
-//    }
-//
-//    static func othersNetworking() -> UserAPINetworking {
-//
-//    }
-//
-//}

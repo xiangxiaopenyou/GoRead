@@ -12,7 +12,7 @@ struct Macros {
     // MARK: 网络接口URL
     struct NetworkURL {
         #if DEBUG
-        static let baseURL = ""
+        static let baseURL = "http://testapp.zhangdu.com/v1"
         #else
         static let baseURL = ""
         #endif

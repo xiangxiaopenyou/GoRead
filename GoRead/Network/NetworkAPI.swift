@@ -1,5 +1,5 @@
 //
-//  UserAPI.swift
+//  NetworkAPI.swift
 //  GoRead
 //
 //  Created by zhangdu_imac on 2020/12/14.
@@ -8,20 +8,23 @@
 import Foundation
 import Moya
 
-enum UserAPI {
+enum NetworkAPI {
     case login(path: String, account: String, password: String)
+    case test(classId: String)
 }
 
-extension UserAPI: TargetType {
+extension NetworkAPI: TargetType {
     
     var baseURL: URL {
-        URL(string: Macros.NetworkURL.baseURL)!
+        return URL(string: Macros.NetworkURL.baseURL)!
     }
     
     var path: String {
         switch self {
         case .login(path: _, account: _, password: _):
             return ""
+        case .test(classId: _):
+            return "/book-v2"
         }
     }
     
@@ -29,6 +32,8 @@ extension UserAPI: TargetType {
         switch self {
         case .login(path: _, account: _, password: _):
             return .post
+        case .test(classId: _):
+            return .get
         }
     }
     
@@ -42,13 +47,16 @@ extension UserAPI: TargetType {
         case .login(path: _, account: let account, password: let password):
             params["tel"] = account
             params["password"] = password
+        case .test(classId: let classId):
+            params["class_id"] = classId
+            params["action"] = "class"
         }
         return params
     }
     
     var task: Task {
         switch self {
-        case .login(path: _, account: _, password: _):
+        default:
             if let params = paramaters {
                 return.requestParameters(parameters: params, encoding: URLEncoding.default)
             }

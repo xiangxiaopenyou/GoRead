@@ -15,5 +15,6 @@ protocol APIProtocol {
     ///   - path: 拼接路径
     ///   - account: 账号
     ///   - password: 密码
-    func login(path: String, account: String, password: String) -> Single<[People]>
+    // func login(path: String, account: String, password: String) -> Single<[People]>
+    func test(classId: String) -> Single<[Category]>
 }

@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         let tabBarViewModel = HomeTabBarViewModel()
         navigator.show(sender: nil, scene: .tab(viewModel: tabBarViewModel), transition: .root(window: window!))
+        
+        let networking = Networking()
+        networking.test(classId: "1")
+        
         return true
     }
 }
