@@ -24,6 +24,12 @@ class Networking: APIProtocol {
         self.isNetworkReachable = networkReachable()
         self.provider = MoyaProvider<NetworkAPI>()
     }
+    
+//    func request(token: NetworkAPI) -> Observable<Moya.Response> {
+//        provider.rx.request(token).subscribe { (response) in
+//        } onError: { (error) in
+//        }
+//    }
 }
 
 
@@ -42,8 +48,21 @@ extension Networking {
         return self.provider.rx.request(target).mapObject(T.self)
     }
     private func requestArray<T: BaseMappable>(target: NetworkAPI, type: T.Type) -> Single<[T]> {
+        self.provider.rx.request(target).subscribe { (response) in
+            
+        } onError: { (error) in
+            
+        }
+        self.provider.rx.request(target).asObservable().subscribe { (<#Response#>) in
+            <#code#>
+        } onError: { (<#Error#>) in
+            <#code#>
+        } onCompleted: {
+            <#code#>
+        } onDisposed: {
+            <#code#>
+        }
+
         return self.provider.rx.request(target).mapArray(T.self)
     }
 }
-
-
